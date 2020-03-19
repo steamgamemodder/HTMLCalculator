@@ -1,0 +1,188 @@
+<html>
+	<head>
+		<title>HTML Calculator</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>HTML CALCULATOR</h1>
+		<hr>
+		<div id="calculator">
+			<div id="textbox">&nbsp</div>
+			<table>
+				<tr>
+					<th>
+						<td><button id="buttonce">C</button></td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<td><button id="button1">1</button></td>
+						<td><button id="button2">2</button></td>
+						<td><button id="button3">3</button></td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<td><button id="button4">4</button></td>
+						<td><button id="button5">5</button></td>
+						<td><button id="button6">6</button></td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<td><button id="button7">7</button></td>
+						<td><button id="button8">8</button></td>
+						<td><button id="button9">9</button></td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<td><button id="button0">0</button></td>
+						<td><button id="buttonpoint">.</button></td>
+						<td><button id="buttonequals">=</button></td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<td><button id="buttonadd">+</button></td>
+						<td><button id="buttonsub">-</button></td>
+						<td><button id="buttonmul">*</button></td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<td><button id="buttondiv">/</button></td>
+						<td><button id="buttonmod">%</button></td>
+						<td><button id="buttonpow">^</button></td>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<td><button id="buttonrbracket">(</button></td>
+						<td><button id="buttonlbracket">)</button></td>
+					</th>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<h2>Logger</h2>
+		<textarea id="log"></textarea>
+	</body>
+	<style>
+		#calculator {
+			background-color: black;
+			border-radius: 10px;
+			padding: 10px;
+			display: inline-block;
+		}
+		#textbox {
+			background-color: white;
+			border: 1px solid black;
+			margin-bottom: 5px;
+		}
+		button {
+			background-color: white;
+			border: none;
+			width: 20px;
+			height: 20px;
+		}
+		button:hover {
+			background-color: lightslategray;
+		}
+		#log{
+			background-color: black;
+			font-family: monospace;
+			color: white;
+		}
+	</style>
+	<script>
+		$("#buttonce").click(function() {
+			$("#textbox").empty();
+			$("#textbox").append("&nbsp;");
+			$("#log").append("Cleared\n");
+		});
+		$("#button1").click(function() {
+			$("#textbox").append("1");
+			$("#log").append("1\n");
+		});
+		$("#button2").click(function() {
+			$("#textbox").append("2");
+			$("#log").append("2\n");
+		});
+		$("#button3").click(function() {
+			$("#textbox").append("3");
+			$("#log").append("3\n");
+		});
+		$("#button4").click(function() {
+			$("#textbox").append("4");
+			$("#log").append("4\n");
+		});
+		$("#button5").click(function() {
+			$("#textbox").append("5");
+			$("#log").append("5\n");
+		});
+		$("#button6").click(function() {
+			$("#textbox").append("6");
+			$("#log").append("6\n");
+		});
+		$("#button7").click(function() {
+			$("#textbox").append("7");
+			$("#log").append("7\n");
+		});
+		$("#button8").click(function() {
+			$("#textbox").append("8");
+			$("#log").append("8\n");
+		});
+		$("#button9").click(function() {
+			$("#textbox").append("9");
+			$("#log").append("9\n");
+		});
+		$("#button0").click(function() {
+			$("#textbox").append("0");
+			$("#log").append("0\n");
+		});
+		$("#buttonpoint").click(function() {
+			$("#textbox").append(".");
+			$("#log").append(".\n");
+		});
+		$("#buttonadd").click(function() {
+			$("#textbox").append("+");
+			$("#log").append("+\n");
+		});
+		$("#buttonsub").click(function() {
+			$("#textbox").append("-");
+			$("#log").append("-\n");
+		});
+		$("#buttonmul").click(function() {
+			$("#textbox").append("*");
+			$("#log").append("*\n");
+		});
+		$("#buttondiv").click(function() {
+			$("#textbox").append("/");
+			$("#log").append("/\n");
+		});
+		$("#buttonmod").click(function() {
+			$("#textbox").append("%");
+			$("#log").append("%\n");
+		});
+		$("#buttonpow").click(function() {
+			$("#textbox").append("**");
+			$("#log").append("^\n");
+		});
+		$("#buttonrbracket").click(function() {
+			$("#textbox").append("(");
+			$("#log").append("(\n");
+		});
+		$("#buttonlbracket").click(function() {
+			$("#textbox").append(")");
+			$("#log").append(")\n");
+		});
+		$("#buttonequals").click(function() {
+			$("#log").append("=\n");
+			var calculation = document.getElementById("textbox").textContent;
+			var answer = eval(calculation);
+			$("#textbox").empty();
+			$("#textbox").append(answer);
+		});
+	</script>
+</html>
